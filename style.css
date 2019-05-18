@@ -129,4 +129,44 @@ html{
         padding-left: 15vw;
     }
 
+    .main::before{
+        width: 20vw;
+        height: 100vh;
+        background-size: contain;
+        top: 10%;
+        left: 3%;
+
+    }
+
+    .meaning{
+        width: 70%;
+
+    }
+
+
+
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+
+    .inputssection{
+        width: 90vw;
+    }
+
+    .inputs{
+        padding-left: 5vw;
+    }
+    .main::before{
+        width: 50vw;
+        height: 37vh;
+        background-size: contain;
+        top: 3%;
+        left: 3%;
+
+    }
+
+    .meaning{
+        width: 80%;;
+    }
+
 }
