@@ -19,12 +19,12 @@ let backToMeaning = $(meaning.children("h1"))
 
 
 
-let me = usersWord.val();
+
 searchButton.on("click", ()=> {
 
     let newWord = usersWord.val().toLowerCase()
 
-    if( words[newWord] ){
+    if( wordsOne[newWord]){
 
 
         main.animate({height: "20vh"}, 'slow');
@@ -37,7 +37,23 @@ searchButton.on("click", ()=> {
 
         // Edit texts
         meaning.children("h3").text(usersWord.val().toUpperCase())
-        meaning.children("#word").text(words[usersWord.val().toLowerCase()])
+        meaning.children("#word").text(wordsOne[usersWord.val().toLowerCase()])
+    }
+
+    else if( wordsTwo[newWord]){
+
+
+        main.animate({height: "20vh"}, 'slow');
+
+        // Hide the input area
+        inputBox.animate({opacity: "0.00003"}, 400)
+
+        // Show the meaning section
+        meaning.show(300)
+
+        // Edit texts
+        meaning.children("h3").text(usersWord.val().toUpperCase())
+        meaning.children("#word").text(wordsTwo[usersWord.val().toLowerCase()])
     }
 
 
@@ -79,39 +95,28 @@ backToMeaning.on("click", ()=> {
 
 
 
-// Function for when user on desktop/pc/laptop or using a keyboard hits the ENTER key
+// // Function for when user on desktop/pc/laptop or using a keyboard hits the ENTER key
 
-body.on("keyup", (e)=>{
+// body.on("keyup", (e)=>{
 
-    let newWord = usersWord.val().toLowerCase()
+//     let newWord = usersWord.val().toLowerCase()
 
-    if(words[newWord]){
+//     if(words[newWord]){
 
-    if(e.code === "Enter"){
-        main.animate({height: "20vh"}, 'slow');
-        inputBox.animate({opacity: "0.00003"}, 400)
+//     if(e.code === "Enter"){
+//         main.animate({height: "20vh"}, 'slow');
+//         inputBox.animate({opacity: "0.00003"}, 400)
 
 
     
-        meaning.show(300)
+//         meaning.show(300)
 
-        meaning.children("h3").text(usersWord.val().toUpperCase())
+//         meaning.children("h3").text(usersWord.val().toUpperCase())
 
-        meaning.children("p").text(words[usersWord.val().toLowerCase()])
-    }
-
-
-   
-
-   
-
-    
-
-}
+//         meaning.children("p").text(words[usersWord.val().toLowerCase()])
+//     }
 
 
-
-})
 
 
 
