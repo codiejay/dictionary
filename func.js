@@ -56,6 +56,20 @@ searchButton.on("click", ()=> {
         meaning.children("#word").text(wordsTwo[usersWord.val().toLowerCase()])
     }
 
+    else if(wordsThree[newWord]){
+        main.animate({height: "20vh"}, 'slow');
+
+        // Hide the input area
+        inputBox.animate({opacity: "0.00003"}, 400)
+
+        // Show the meaning section
+        meaning.show(300)
+
+        // Edit texts
+        meaning.children("h3").text(usersWord.val().toUpperCase())
+        meaning.children("#word").text(wordsThree[usersWord.val().toLowerCase()])
+    }
+
 
    
 
